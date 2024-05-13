@@ -7,10 +7,11 @@
 </head>
 <body>
     <h3>CRUD de Productos</h3>
-
     <a href="index.php?accion=modalAdd">Agregar Producto ➕📁</a>
+    <input type="text" id="inputBusqueda" placeholder="Buscar por nombre" onkeyup="filtrarProductos()">
 
     <table class="table" border="1" >
+    <table class="table" border="1" id="tablaProductos">
         <thead>
             <tr>
                 <th>ID</th>
@@ -29,13 +30,13 @@
                     <td><?= $producto['precio'] ?></td>
                     <td>
                         <a href="index.php?accion=modalActualizar&id=<?= $producto['id'] ?>">✏️</a>
-                        <a href="index.php?accion=eliminarProducto&id=<?= $producto['id'] ?>">🚮</a>                    
-                    
+                        <a href="index.php?accion=eliminarProducto&id=<?= $producto['id'] ?>">🚮</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
-    
+
+    <script src="./Publico/script.js"></script>
 </body>
 </html>

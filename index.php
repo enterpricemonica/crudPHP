@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="publico/estilos.css">
+<link rel="stylesheet" href="publico/estilosA.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
 <?php
 require_once 'configuracion/conexion.php';
 require_once 'controladores/ProductoControlador.php';
