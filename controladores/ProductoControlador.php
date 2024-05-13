@@ -30,14 +30,12 @@ class ProductoControlador {
             }
         }
     }
-
-
     // Controlador para Mostrar formulario, con UN producto por SU ID
     public function mostrarFormularioActualizarProducto(int $id): void {
         $producto = $this->modeloProducto->obtenerProductoPorId($id);
         include './Vistas/modalactualizarproducto.php';
     }
-
+    
     // Controlador para Actualizar producto por su ID
     public function actualizarProducto(): void {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -54,6 +52,18 @@ class ProductoControlador {
             }
         }
     }
+
+    // Controlador para eliminar producto por su ID
+    public function eliminarProducto(int $id): void {
+        $exito = $this->modeloProducto->eliminarProducto($id);
+        if ($exito) {
+            header("Location: index.php");
+            exit();
+        } else {
+            exit("Error al eliminar el producto");
+        }
+    }
+
 
 }
 ?>
